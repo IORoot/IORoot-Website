@@ -1,0 +1,15 @@
+type versions {
+    category: String!
+    company:  String!
+    title:    String!
+    version:  String!
+    link:     String!
+    date:     Date!
+    logo_url: String!
+    colour1:  String!
+    colour2:  String!
+}   
+
+type Query {
+  allVersions: [versions]
+}

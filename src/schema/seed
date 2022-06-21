@@ -1,0 +1,16 @@
+Map(
+  [
+    {
+      category: "test category",
+      company:  "test company",
+      title:    "test title",
+      version:  "test version",
+      link:     "test link",
+      date:     "test date",
+      logo_url: "test logo",
+      colour1:  "test colour1",
+      colour2:  "test colour2",
+    }
+  ],
+  Lambda("version", Create(Collection("versions"), { data: Var("version") }))
+)
