@@ -1,24 +1,19 @@
 import React from "react"
 import { graphql } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+// import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
+import GithubLink from '../components/githubLink'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 
 const ProjectPage = ({ data }) => {
 
-  const image = getImage(data.mdx.frontmatter.hero_image)
-
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <div className="blog-post-container"> 
         <div className="blog-post prose">
-
-          <GatsbyImage
-            image={image}
-            alt={data.mdx.frontmatter.hero_image_alt}
-          />
           
+          <GithubLink to={data.mdx.slug}>Comment on GitHub</GithubLink>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
 
         </div>
