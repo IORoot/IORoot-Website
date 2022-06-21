@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 61 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>IORoot</title>
+    <g id="IORoot">
+        <rect id="Rectangle" fill="#000000" x="2" y="2" width="8" height="28"></rect>
+        <polygon id="Rectangle" fill="#000000" points="50.9964615 2 59.0024305 2 50 30 42 30"></polygon>
+        <rect id="Rectangle" fill="#000000" x="12" y="2" width="28" height="28"></rect>
+    </g>
+</svg>

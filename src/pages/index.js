@@ -25,6 +25,7 @@ const IndexPage = () => {
 
   return (
     <Layout pageTitle="Projects">
+        <h1 className="text-3xl font-bold text-slate-800 mb-4 border-b pb-2" >Posts</h1>
         <ul className="flex flex-col gap-4">
             {
                 data.allMdx.nodes.map(nodes => (

@@ -14,8 +14,6 @@ const ProjectPage = ({ data }) => {
       <div className="blog-post-container"> 
         <div className="blog-post prose">
 
-          <h2>{data.mdx.frontmatter.date}</h2>
-
           <GatsbyImage
             image={image}
             alt={data.mdx.frontmatter.hero_image_alt}
