@@ -1,14 +1,14 @@
 import * as React from 'react'
 import Layout from '../components/layout'
-import Posts from '../components/posts'
+import Projects from '../components/projects'
 
-const IndexPage = () => {
+const ProjectPage = () => {
 
     return (
         <Layout pageTitle="Projects">
-            <Posts />
+            <Projects />
         </Layout>
     )
 
 }
-export default IndexPage
+export default ProjectPage

@@ -1,10 +1,18 @@
 ---
-slug: "/projects/latest-versions"
-date: "2022-05-23"
-title: "🎉 Latest-Versions Project"
+slug:  "/projects/latest-versions"
+date:  "2022-05-23"
+title: "Latest Versions"
+icon:  "gatsby"
 ---
 
 # 🎉 Latest Versions
+
+## Table of contents
+
+```toc
+```
+
+## Details
 
 So, my first little project is going to scrape a bunch of repos / websites for the latest version
 of their product. 
@@ -18,3 +26,32 @@ The initial plan is to get the latest versions of these categories:
 - IDEs
 
 Then we'll build from there.
+
+## test code block
+
+```php
+add_action( 'admin_footer', 'my_action_javascript' );
+
+function my_action_javascript() { ?>
+	<script type="text/javascript" >
+    jQuery(document).ready(function($) {
+
+  	var data = {
+    	'action': 'my_action',
+    	'whatever': 1234
+  	};
+  
+  	// jQuery.post( url [,data ] [,success ] [,dataType ] )
+  	jQuery.post(ajaxurl, data, function(response) {
+    	alert('Got this from the server: ' + response);
+  	});
+
+	});
+	</script> <?php
+}
+```
+
+## Test inline code
+
+This `code` should render well `\here\is\a\directory`.
+

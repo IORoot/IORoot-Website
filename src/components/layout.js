@@ -19,7 +19,7 @@ const Layout = ({ pageTitle, children }) => {
 
 
   return (
-    <div className="container mx-auto max-w-3xl">
+    <div className="container mx-auto max-w-3xl mb-10">
       
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
 
@@ -34,6 +34,11 @@ const Layout = ({ pageTitle, children }) => {
           <li className="hover:text-emerald-400">
             <Link to="/">
               Home
+            </Link>
+          </li>
+          <li className="hover:text-emerald-400">
+            <Link to="/projects">
+              Projects
             </Link>
           </li>
           <li className="hover:text-emerald-400">
