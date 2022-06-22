@@ -26,6 +26,9 @@ module.exports = {
             },
           },
           {
+            resolve: 'gatsby-remark-copy-linked-files'
+          },
+          {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
               exclude: "Table of Contents",
@@ -36,7 +39,8 @@ module.exports = {
               className: "table-of-contents"
             },
           },
-          `gatsby-remark-autolink-headers`
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-mermaid`,
         ],
       },
     },

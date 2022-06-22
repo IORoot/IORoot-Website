@@ -31,15 +31,9 @@ require("prismjs/components/prism-php");
 const components = {
 
   inlineCode: ({ children }) => {
+
     return (
-      <span className="bg-zinc-700" 
-            style={{ 
-              "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace", 
-              "backgroundColor": "rgb(63 63 70)", 
-              "borderRadius": "0.25rem", 
-              "color": "rgb(255 255 255)", 
-              "padding": "0.25rem 0.5rem"
-            }}>{children}</span>
+      <span className="bg-zinc-700" style={{"fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace", "backgroundColor": "rgb(63 63 70)", "borderRadius": "0.25rem", "color": "rgb(255 255 255)", "padding": "0.25rem 0.5rem",}}>{children}</span>
     );
   },
 

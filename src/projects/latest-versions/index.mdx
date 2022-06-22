@@ -27,31 +27,11 @@ The initial plan is to get the latest versions of these categories:
 
 Then we'll build from there.
 
-## test code block
+## Mermaid
 
-```php
-add_action( 'admin_footer', 'my_action_javascript' );
-
-function my_action_javascript() { ?>
-	<script type="text/javascript" >
-    jQuery(document).ready(function($) {
-
-  	var data = {
-    	'action': 'my_action',
-    	'whatever': 1234
-  	};
-  
-  	// jQuery.post( url [,data ] [,success ] [,dataType ] )
-  	jQuery.post(ajaxurl, data, function(response) {
-    	alert('Got this from the server: ' + response);
-  	});
-
-	});
-	</script> <?php
-}
+```mermaid
+graph LR
+    install[Install Plugin]
+    install --> configure[Configure Plugin]
+    configure --> draw[Draw Fancy Diagrams]
 ```
-
-## Test inline code
-
-This `code` should render well `\here\is\a\directory`.
-
