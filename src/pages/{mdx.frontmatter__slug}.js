@@ -9,6 +9,17 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const ProjectPage = ({ data }) => {
 
+  console.log(data)
+
+  var githublink = "https://github.com/IORoot/blog/blob/master/" + data.mdx.slug + "index.mdx" 
+  var githubtext = "Comment on GitHub"
+
+  if( data.mdx.frontmatter.repo ) {
+    // Switch to sProject REPO link
+    githublink = data.mdx.frontmatter.repo
+    githubtext = "Visit GitHub Repo"
+  }
+
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <div className="blog-post-container"> 
@@ -21,8 +32,9 @@ const ProjectPage = ({ data }) => {
             </div>
           
             <div className="py-1">
-              <GithubLink to={data.mdx.slug}>Comment on GitHub</GithubLink>
+              <GithubLink to={githublink}>{githubtext}</GithubLink>
             </div>
+
           </div>
 
 
@@ -45,6 +57,7 @@ export const query = graphql`
         date
         title
         icon
+        repo
       }
     }
   }

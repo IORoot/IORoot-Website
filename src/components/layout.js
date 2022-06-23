@@ -19,7 +19,7 @@ const Layout = ({ pageTitle, children }) => {
 
 
   return (
-    <div className="container mx-auto max-w-3xl mb-10">
+    <div className=" max-w-3xl mb-10 mx-4 md:mx-auto">
       
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
 
