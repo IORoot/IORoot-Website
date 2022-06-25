@@ -10,23 +10,24 @@ const Projects = () => {
 
     const groupedprojects = useStaticQuery(graphql`
     {
-    allMdx(
-        sort: {fields: frontmatter___icon, order: ASC}
-        filter: {frontmatter: {slug: {glob: "/projects*/*"}}}
-    ) {
-        group(field: frontmatter___icon) {
-        fieldValue
-        nodes {
-            id
-            frontmatter {
-            title
-            slug
-            date(formatString: "MMMM D, YYYY")
-            icon
+        allMdx(
+            sort: {fields: frontmatter___icon, order: ASC}
+            filter: {frontmatter: {slug: {glob: "/projects*/*"}}}
+        ) {
+            group(field: frontmatter___icon) {
+            fieldValue
+            nodes {
+                id
+                frontmatter {
+                title
+                slug
+                date(formatString: "MMMM D, YYYY")
+                icon
+                desc
+                }
+            }
             }
         }
-        }
-    }
     }
 
     `)
@@ -60,9 +61,13 @@ const Projects = () => {
                         var nodelist = groups.nodes.map( ( nodes ) => {
                             return <li key={nodes.id} className=" bg-slate-50 rounded-xl p-4 overflow-hidden">
                                 <Link className="text-emerald-800 hover:text-emerald-400 text-2xl flex flex-row gap-2 " to={string_to_slug(nodes.frontmatter.slug)}>
-                                    <SimpleIcon icon={nodes.frontmatter.icon} />
-                                    {nodes.frontmatter.title}.
+                                    <SimpleIcon icon={nodes.frontmatter.icon} title={nodes.frontmatter.title} />
+                                    <div className="w-5/6 mb-2">
+                                        <div className="mb-2">{nodes.frontmatter.title}</div>
+                                        <div className="text-xs text-green-900">{nodes.frontmatter.desc}</div>
+                                    </div>
                                 </Link>
+                                
                                 <div className="text-slate-500 opacity-40 ml-10">{nodes.frontmatter.date}</div>
                             </li>
                         })
