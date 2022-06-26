@@ -23,6 +23,7 @@ const Projects = () => {
                 slug
                 date(formatString: "MMMM D, YYYY")
                 icon
+                desc
                 }
             }
             }
