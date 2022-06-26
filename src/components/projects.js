@@ -11,7 +11,7 @@ const Projects = () => {
     const groupedprojects = useStaticQuery(graphql`
     {
         allMdx(
-            sort: {fields: frontmatter___icon, order: ASC}
+            sort: {fields: [frontmatter___icon, frontmatter___title], order: [ASC,ASC]}
             filter: {frontmatter: {slug: {glob: "/projects*/*"}}}
         ) {
             group(field: frontmatter___icon) {
@@ -23,7 +23,6 @@ const Projects = () => {
                 slug
                 date(formatString: "MMMM D, YYYY")
                 icon
-                desc
                 }
             }
             }
