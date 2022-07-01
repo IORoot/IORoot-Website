@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <Layout pageTitle="About Me">
       <p className="mb-2 text-2xl">Hello there!</p>
-      <p className="mb-2 text-xl">I'm Andy. This is my, throw it here because I should list everything somehere, website. This site is built with gatsby and netlify, all for free.</p>
+      <p className="mb-2 text-xl">I'm Andy. This is my, throw it here because I should list everything somewhere, website. This site is built with gatsby and netlify, all for free.</p>
       <p className="mb-10 text-xl">All of the site posts and projects are in a github repository, here: <Link className="text-green-700 text-xl underline" to="https://github.com/IORoot/blog" >IORoot/blog</Link></p>
       
       <h2 className="mb-2 text-2xl">How the site gets content</h2>
