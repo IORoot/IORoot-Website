@@ -19,12 +19,13 @@ const Projects = () => {
             nodes {
                 id
                 frontmatter {
-                title
-                slug
-                date(formatString: "MMMM D, YYYY")
-                icon
-                desc
+                    title
+                    slug
+                    date(formatString: "MMMM D, YYYY")
+                    icon
+                    desc
                 }
+                mdxAST
             }
             }
         }
@@ -59,16 +60,45 @@ const Projects = () => {
                     groupedprojects.allMdx.group.map( ( groups  => {
 
                         var nodelist = groups.nodes.map( ( nodes ) => {
+
+                            var svg = "";
+                            if (nodes.mdxAST.children){
+                                var children = nodes.mdxAST.children;
+
+                                if (Object.values(children)[2]){
+                                    var thirdValue = Object.values(children)[2]; 
+    
+                                    if (thirdValue.hasOwnProperty('value')) {
+                                        
+                                        if (thirdValue.value.includes("jsdelivr")){
+                                            var match = thirdValue.value.match(/"(.*jsdelivr.*?)"/);
+                                            var url = match[1]
+                                            svg = url.replace(/200px/gi, '100px')
+                                        }
+                                        
+                                    }
+                                }
+                            }
+
+
                             return <li key={nodes.id} className=" bg-slate-50 rounded-xl p-4 overflow-hidden">
-                                <Link className="text-emerald-800 hover:text-emerald-400 text-2xl flex flex-row gap-2 " to={string_to_slug(nodes.frontmatter.slug)}>
-                                    <SimpleIcon icon={nodes.frontmatter.icon} title={nodes.frontmatter.title} />
-                                    <div className="w-5/6 mb-2">
-                                        <div className="mb-2">{nodes.frontmatter.title}</div>
+                                <Link className="text-emerald-800 hover:text-emerald-400 text-2xl flex flex-col gap-2 " to={string_to_slug(nodes.frontmatter.slug)}>
+
+                                    <img className="w-30 mx-auto" src={svg} alt="svg"/>
+
+                                    <div className="w-5/6 mx-auto mb-6">
+                                        <div className="mb-2 text-center">{nodes.frontmatter.title}</div>
                                         <div className="text-xs text-green-900">{nodes.frontmatter.desc}</div>
                                     </div>
+
                                 </Link>
                                 
-                                <div className="text-slate-500 opacity-40 ml-10">{nodes.frontmatter.date}</div>
+                                <div className="flex flex-row gap-3">
+                                    
+                                    <div className="text-slate-500 opacity-40 ml-auto">{nodes.frontmatter.date}</div>
+                                    <SimpleIcon className="w-6 opacity-30 " icon={nodes.frontmatter.icon} title={nodes.frontmatter.title} /> 
+                                </div>
+                                
                             </li>
                         })
 
