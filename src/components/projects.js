@@ -94,7 +94,6 @@ const Projects = () => {
                                 </Link>
                                 
                                 <div className="flex flex-row gap-3">
-                                    
                                     <div className="text-slate-500 opacity-40 ml-auto">{nodes.frontmatter.date}</div>
                                     <SimpleIcon className="w-6 opacity-30 " icon={nodes.frontmatter.icon} title={nodes.frontmatter.title} /> 
                                 </div>

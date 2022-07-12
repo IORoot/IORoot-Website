@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 const AboutPage = () => {
   return (
-    <Layout pageTitle="About Me">
+    <Layout pageTitle="About Me" classes="max-w-3xl mx-4 md:mx-auto mb-10">
       <p className="mb-2 text-2xl">Hello there!</p>
       <p className="mb-2 text-xl">I'm Andy. This is my, throw it here because I should list everything somewhere, website. This site is built with gatsby and netlify, all for free.</p>
       <p className="mb-10 text-xl">All of the site posts and projects are in a github repository, here: <Link className="text-green-700 text-xl underline" to="https://github.com/IORoot/blog" >IORoot/blog</Link></p>

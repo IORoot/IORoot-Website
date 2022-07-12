@@ -14,13 +14,13 @@ const ProjectPage = ({ data }) => {
   var githubtext = "Comment on GitHub"
 
   if( data.mdx.frontmatter.repo ) {
-    // Switch to sProject REPO link
+    // Switch to Project REPO link
     githublink = data.mdx.frontmatter.repo
     githubtext = "Visit GitHub Repo"
   }
 
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
+    <Layout pageTitle={data.mdx.frontmatter.title} classes="max-w-3xl mx-4 md:mx-auto mb-10">
       <div className="blog-post-container"> 
         <div className="blog-post prose">
           <div className="info flex flex-row mb-10 justify-items-center">
